@@ -9,7 +9,7 @@ import java.util.Properties;
 
 public class MailHandler {
 
-    public void sendMail()
+    public void sendMail(String s)
     {
         Properties sysProperties = System.getProperties();
         System.out.println(sysProperties);
@@ -26,7 +26,7 @@ public class MailHandler {
         MimeMessage mailMessage =new MimeMessage(mailSession);
         try{
             mailMessage.setFrom(MailMetaData.myUserMail);
-            mailMessage.setSubject("This is weeky test");
+            mailMessage.setText(s);
             mailMessage.setText("Lost host server has been hit ");
             Address receiverEmail =new InternetAddress(MailMetaData.receiverMail);
             mailMessage.setRecipients(Message.RecipientType.TO, String.valueOf(receiverEmail));
