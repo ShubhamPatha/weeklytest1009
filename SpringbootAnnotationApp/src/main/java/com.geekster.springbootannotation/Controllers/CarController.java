@@ -19,7 +19,7 @@ public class CarController {
     {
 
         MailHandler mailHandler =new MailHandler();
-        mailHandler.sendMail();
+        mailHandler.sendMail(c.getColor().toString());
         return c.getColor()+" was called just by local server";
     }
 
